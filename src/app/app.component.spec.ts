@@ -26,8 +26,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+<<<<<<< HEAD
     expect(compiled.querySelector('.content span')?.textContent).toContain(
       'medical-care-app app is running!'
     );
+=======
+    expect(compiled.querySelector('.content span')?.textContent).toContain('medical-care-app app is running!');
+>>>>>>> 4820277d40f206a43eaed81be9afa463a994a6dd
   });
 });
