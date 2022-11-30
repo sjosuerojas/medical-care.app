@@ -4,12 +4,12 @@ This repository is created in order to assist medical care and hospital processe
 
 ## Table of Contents
 
-+ [About](#About)
-+ [Environments](#environments)
-+ [Layouts](#layouts)
-+ [Getting Started](#getting_started)
-+ [Usage](#usage)
-+ [Deployment](#deployment)
+- [About](#About)
+- [Environments](#environments)
+- [Layouts](#layouts)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Deployment](#deployment)
 
 ## [About](#about)
 
@@ -19,10 +19,10 @@ Angular 14, Node 16.18.0
 
 here is a table with the Modyo® environments where this widgets is available.
 
-| Environments | Url Base |
-|-|-|
-| Development | <https://un.modyo.cloud> |
-| Certification | <http://un.modyo.be> |
+| Environments  | Url Base                 |
+| ------------- | ------------------------ |
+| Development   | <https://un.modyo.cloud> |
+| Certification | <http://un.modyo.be>     |
 
 Despite this table we need to instantiate the environments to allow push the widget from local devices this env file must accomplish with the .env.example file but should be renamed and this file cant be pushed to the GitHub repo to avoid pass valid token to the git history
 
@@ -31,8 +31,8 @@ Despite this table we need to instantiate the environments to allow push the wid
 here is a table with the layouts where the widget is instantiated in Modyo®.
 
 | Layouts |
-|-|
-| Home |
+| ------- |
+| Home    |
 | Summary |
 
 ## [Getting Started](#getting_started)
@@ -82,9 +82,9 @@ Here we describe in detail the widget flow including what endpoints are used, st
 Once all changes are made in the new branch, we can publish changes to the Modyo Platform following a GitHub workflow:
 ​
 
-+ To publish to **Certification**:
-+ first make sure the file _.github/workflows/publish-to-certification.yml_ exists.
-+ we commit the changes and push the branch with:
+- To publish to **Certification**:
+- first make sure the file _.github/workflows/publish-to-certification.yml_ exists.
+- we commit the changes and push the branch with:
 
 ```shell
     git add .
@@ -92,22 +92,22 @@ Once all changes are made in the new branch, we can publish changes to the Modyo
     git push origin branch-name
 ```
 
-+ we create a new Pull Request to merge the branch into _develop_ branch.
-+ To publish to **Prodution**:
-+ first make sure the file _.github/workflows/publish-to-production.yml_ exists. 
-+ we create a new Pull Request to merge the _develop_ branch into _master_ branch.
-+ create a new Release with the new version (the first time it will probably have to be manually), following naming convention such as v1.0.0., and make sure its published and doesn't stay as a draft.
-​
-Some things to consider:
-+ Don't create the widget manually on the Modyo platform, when the workflow runs the widget will automatically create itself and then we can add it to the Layout we need.
-+ Name the widget after the same name of the repo (_larrainvial-repo-name_ instead of _Repo Name_), so we can know this is a widget with the latest settings.
-​
-In the event that we need to make a hotfix in a hurry we can also use the vue-cli interface. First we need to adjust the _.env_ file with the *MODYO_ACCOUNT_URL* and *MODYO_TOKEN* values so we aim to Certification or Production environment. Write in the console:
-​
+- we create a new Pull Request to merge the branch into _develop_ branch.
+- To publish to **Prodution**:
+- first make sure the file _.github/workflows/publish-to-production.yml_ exists.
+- we create a new Pull Request to merge the _develop_ branch into _master_ branch.
+- create a new Release with the new version (the first time it will probably have to be manually), following naming convention such as v1.0.0., and make sure its published and doesn't stay as a draft.
+  ​
+  Some things to consider:
+- Don't create the widget manually on the Modyo platform, when the workflow runs the widget will automatically create itself and then we can add it to the Layout we need.
+- Name the widget after the same name of the repo (_larrainvial-repo-name_ instead of _Repo Name_), so we can know this is a widget with the latest settings.
+  ​
+  In the event that we need to make a hotfix in a hurry we can also use the vue-cli interface. First we need to adjust the _.env_ file with the _MODYO_ACCOUNT_URL_ and _MODYO_TOKEN_ values so we aim to Certification or Production environment. Write in the console:
+  ​
 
 ```shell
 vue ui
 ```
 
 ​
-There, go to _Tasks_ and just run *build* and *modyo-push*, now you can see your changes uploaded to the widget in the builder. Ideally, we run the normal workflow afterwards.
+There, go to _Tasks_ and just run _build_ and _modyo-push_, now you can see your changes uploaded to the widget in the builder. Ideally, we run the normal workflow afterwards.
